@@ -1,0 +1,17 @@
+<mat-card class="search">
+  <form class="search-form" (ngSubmit)="onSubmit()">
+    <!--mat-input is a directive-->
+    <mat-form-field>
+      <input
+        mat-input
+        type="text"
+        id="searchBox"
+        placeholder="Search...."
+        name="searchField"
+        [(ngModel)]="searchField"
+      />
+    </mat-form-field>
+    <!--mat-raise-button is a directive-->
+    <button mat-raised-button type="submit">Submit</button>
+  </form>
+</mat-card>

@@ -16,6 +16,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatMenuModule,
   ],
   exports: [
     MatToolbarModule,

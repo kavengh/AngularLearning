@@ -1,8 +1,12 @@
+// this is an overall theme that does quite some styling for us
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+
 html,
 body {
   height: 100%;
 }
 body {
+  // remove user agent margin
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }

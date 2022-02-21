@@ -1,12 +1,4 @@
 // this is an overall theme that does quite some styling for us
-@import "@angular/material/prebuilt-themes/pink-bluegrey.css";
-
-html,
-body {
-  height: 100%;
-}
-body {
-  // remove user agent margin
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+.container {
+  padding: 20px;
 }

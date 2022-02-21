@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutPageComponent } from './about/about-page/about-page.component';
 import { ClientPageComponent } from './clients/client-page/client-page.component';
 import { CompanyPageComponent } from './company/company-page/company-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: '**',
     component: PageNotFoundComponent,
+  },
+  {
+    path: 'about',
+    component: AboutPageComponent,
   },
 ];
 /*The main change we’ve made is that we’ve created a new route. The first is the clients route, which will load ClientPageComponent (a smart component) into the view when called. If we run our application using ng serve, the application will run in the browser. If we then add /clients to the end of the URL of our application, it will load ClientPageComponent in the browser. */

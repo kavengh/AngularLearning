@@ -8,9 +8,11 @@ import { ClientModule } from './clients/client.module';
 import { CompanyModule } from './company/company.module';
 import { SharedModule } from './shared/shared.module';
 import { CustomMaterialModule } from './custom-material.module';
+import { NavigationComponent } from './navigation/navigation.component';
+import { AboutModule } from './about/about.module';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, NavigationComponent],
   imports: [
     BrowserModule,
     // This is the class that has our routing
@@ -25,6 +27,7 @@ import { CustomMaterialModule } from './custom-material.module';
     SharedModule,
     // all of the ui components
     CustomMaterialModule,
+    AboutModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

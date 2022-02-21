@@ -12,6 +12,12 @@ const routes: Routes = [
     // in this case after the path is matched, the Route module will take the value of the component property and load it into the main view of the component.
     component: ClientPageComponent,
   },
+  // redirect to if the path was close
+  {
+    path: 'client',
+    redirectTo: '/clients',
+    pathMatch: 'full',
+  },
   {
     // company routing object
     path: 'company',

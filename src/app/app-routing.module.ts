@@ -13,6 +13,10 @@ const routes: Routes = [
     // in this case after the path is matched, the Route module will take the value of the component property and load it into the main view of the component.
     component: ClientPageComponent,
   },
+  {
+    path: 'clients/:id',
+    component: ClientPageComponent,
+  },
   // redirect to if the path was close
   {
     path: 'client',
@@ -33,14 +37,14 @@ const routes: Routes = [
     // not to sure on this but i think it just means append  the client part and use that as the whole path
     pathMatch: 'full',
   },
+  {
+    path: 'about',
+    component: AboutPageComponent,
+  },
   // wild card route if the url passed in is invalid, is run if no other paths are correct
   {
     path: '**',
     component: PageNotFoundComponent,
-  },
-  {
-    path: 'about',
-    component: AboutPageComponent,
   },
 ];
 /*The main change we’ve made is that we’ve created a new route. The first is the clients route, which will load ClientPageComponent (a smart component) into the view when called. If we run our application using ng serve, the application will run in the browser. If we then add /clients to the end of the URL of our application, it will load ClientPageComponent in the browser. */

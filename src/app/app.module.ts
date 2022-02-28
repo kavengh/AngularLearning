@@ -10,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
 import { CustomMaterialModule } from './custom-material.module';
 import { NavigationComponent } from './navigation/navigation.component';
 import { AboutModule } from './about/about.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, NavigationComponent],
@@ -28,6 +29,8 @@ import { AboutModule } from './about/about.module';
     // all of the ui components
     CustomMaterialModule,
     AboutModule,
+    // adding HttpClient module
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

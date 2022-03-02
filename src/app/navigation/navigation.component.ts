@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -7,18 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./navigation.component.scss'],
 })
 export class NavigationComponent implements OnInit {
-  @Input() title: string;
-
-  // created a router object
+  @Input()
+  title: string;
   constructor(private router: Router) {}
 
-  ngOnInit(): void {}
+  ngOnInit() {}
 
-  /**
-   * if the location is matched in the router object if will redirect
-   * @param location - path we want to redirect to
-   */
-  goto(location: string) {
+  goTo(location: string) {
     console.log(location);
     this.router.navigateByUrl(location);
   }

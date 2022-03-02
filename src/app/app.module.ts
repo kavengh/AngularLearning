@@ -11,6 +11,9 @@ import { CustomMaterialModule } from './custom-material.module';
 import { NavigationComponent } from './navigation/navigation.component';
 import { AboutModule } from './about/about.module';
 import { HttpClientModule } from '@angular/common/http';
+import { ClientService } from './clients/client.service';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './services/in-memory-data.service';
 
 @NgModule({
   declarations: [AppComponent, NavigationComponent],
@@ -31,8 +34,11 @@ import { HttpClientModule } from '@angular/common/http';
     AboutModule,
     // adding HttpClient module
     HttpClientModule,
+    // installed in memory api
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
   ],
-  providers: [],
+  // adding client service here as a token
+  providers: [ClientService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

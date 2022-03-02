@@ -5,6 +5,7 @@ import { ClientPageComponent } from './client-page/client-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { CustomMaterialModule } from '../custom-material.module';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 /**
  * Here we will house all of our client related components and this will then allow us to

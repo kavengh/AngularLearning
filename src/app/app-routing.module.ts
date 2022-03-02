@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutPageComponent } from './about/about-page/about-page.component';
 import { ClientPageComponent } from './clients/client-page/client-page.component';
+import { ClientModule } from './clients/client.module';
 import { CompanyPageComponent } from './company/company-page/company-page.component';
+import { CompanyModule } from './company/company.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 // Contains a set of objects that define the details of the Route
@@ -46,12 +48,48 @@ const routes: Routes = [
     path: '**',
     component: PageNotFoundComponent,
   },
+  {
+    path: 'clients/new',
+    loadChildren: () =>
+      import('./clients/client.module').then((m) => m.ClientModule),
+  },
+  {
+    path: 'clients/edit/:id',
+    loadChildren: () =>
+      import('./clients/client.module').then((m) => m.ClientModule),
+  },
+
+  {
+    path: 'clients/search',
+    loadChildren: () =>
+      import('./clients/client.module').then((m) => m.ClientModule),
+  },
+  {
+    path: 'clients/details/:id',
+    loadChildren: () =>
+      import('./clients/client.module').then((m) => m.ClientModule),
+  },
+  {
+    path: 'company/new',
+    loadChildren: () =>
+      import('./company/company.module').then((m) => m.CompanyModule),
+  },
+  {
+    path: 'company/search',
+    loadChildren: () =>
+      import('./company/company.module').then((m) => m.CompanyModule),
+  },
+  {
+    path: 'company/details/:id',
+    loadChildren: () =>
+      import('./company/company.module').then((m) => m.CompanyModule),
+  },
 ];
 /*The main change we’ve made is that we’ve created a new route. The first is the clients route, which will load ClientPageComponent (a smart component) into the view when called. If we run our application using ng serve, the application will run in the browser. If we then add /clients to the end of the URL of our application, it will load ClientPageComponent in the browser. */
 
 @NgModule({
   // we have an array that has all of the routes (this is defined above), these routes are passed to the forRoot function in RouterModule. Then its exported out of AppRoutingModule and imported into our main AppModule
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), ClientModule, CompanyModule],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

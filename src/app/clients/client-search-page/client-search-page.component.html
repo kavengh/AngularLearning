@@ -1,1 +1,6 @@
-<p>client-search-page works!</p>
+<h1>Client Search</h1>
+<app-search-form
+  [title]="'Search for a Client'"
+  (searchEvent)="searchEventHandler($event)"
+></app-search-form>
+<app-client-list [clients]="clientList"> </app-client-list>

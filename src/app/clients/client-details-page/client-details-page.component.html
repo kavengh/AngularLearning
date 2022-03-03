@@ -1,1 +1,10 @@
-<p>client-details-page works!</p>
+<!-- Call the child component and pass in all these events
+  -- acts like a container for the details card
+  -->
+<app-client-detail
+  (deleteEvent)="deleteClientHandler($event)"
+  (editEvent)="editEventHandler($event)"
+  (saveEvent)="saveClientHandler($event)"
+  (searchEvent)="searchEventHandler()"
+  [client]="selectedClient"
+></app-client-detail>

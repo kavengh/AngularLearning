@@ -13,7 +13,7 @@ export class ClientDetailComponent {
   client: Client;
 
   /**
-   * instatiation of the events, we do this so we can pass data to the parent component
+   * instatiation of the events, we do this so we can pass data to the parent component, the data these events emit are type Client
    */
   @Output()
   searchEvent: EventEmitter<Client> = new EventEmitter();
@@ -28,7 +28,7 @@ export class ClientDetailComponent {
   saveEvent: EventEmitter<Client> = new EventEmitter();
 
   /**
-   * methods that will pass the data to the parent
+   * methods that will pass the data to the parent, these are used in our view template. The actual logic will be in the parent component and passed in as properites to this component. We have these h
    */
 
   searchAll(): void {

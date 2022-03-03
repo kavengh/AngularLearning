@@ -1,1 +1,7 @@
-<p>company-details-page works!</p>
+<app-company-detail
+  [company]="selectedCompany"
+  (searchEvent)="searchEventHandler()"
+  (editEvent)="editCompanyHandler($event)"
+  (deleteEvent)="deleteCompanyHandler($event)"
+  (saveEvent)="saveCompanyHandler($event)"
+></app-company-detail>

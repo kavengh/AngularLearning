@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Company } from '../company';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-company-list',
   templateUrl: './company-list.component.html',
-  styleUrls: ['./company-list.component.scss']
+  styleUrls: ['./company-list.component.scss'],
 })
-export class CompanyListComponent implements OnInit {
+export class CompanyListComponent {
+  @Input()
+  companies: any;
 
-  constructor() { }
+  constructor(private router: Router) {}
 
-  ngOnInit(): void {
+  viewCompanyDetails(company: Company): void {
+    this.router.navigateByUrl('/company/details/' + company.id);
   }
-
 }

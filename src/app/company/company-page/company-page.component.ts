@@ -1,13 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { CompanyService } from '../company.service';
+import { Router } from '@angular/router';
+import { Company } from '../company';
 
-// we ran ng generate component  company-page --skip-import so that we didnt auto import into the module.
 @Component({
   selector: 'app-company-page',
   templateUrl: './company-page.component.html',
   styleUrls: ['./company-page.component.scss'],
 })
 export class CompanyPageComponent implements OnInit {
-  constructor() {}
+  companyList: any[];
 
-  ngOnInit(): void {}
+  constructor(private companyService: CompanyService, private router: Router) {}
+
+  ngOnInit() {
+    this.companyService.getCompanyList().subscribe((res) => {
+      this.companyList = res;
+    });
+  }
+
+  saveCompany(companyDetails: Company) {
+    this.companyService.save(companyDetails).subscribe((company) => {
+      this.companyList.push(company);
+      this.router.navigateByUrl('/company/search');
+    });
+  }
 }
